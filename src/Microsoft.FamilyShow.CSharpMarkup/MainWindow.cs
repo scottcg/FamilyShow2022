@@ -1,36 +1,29 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Data;
-using System.Windows.Media;
+﻿using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.FamilyShow
+namespace Microsoft.FamilyShow;
+
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    public MainWindow()
     {
-        public MainWindow()
-        { 
-            ViewModel = App.Current.Services.GetService<MainWindowViewModel>()!;
+        ViewModel = App.Current.Services.GetService<MainWindowViewModel>()!;
 
-            Title = "Family.Show.2022 CSharpMarkup";
-            Background = App.Current.Skin.MainBackgroundBrush;
-            Width = 1400;
-            Height = 1000;
-            ResizeMode = ResizeMode.CanResizeWithGrip;
-            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        ViewModel.StatusMessage = "Placeholder-message-testing-binding";
 
-            Build();
-        }
+        Title = "Family.Show.2022 CSharpMarkup";
+        Background = App.Current.Skin.MainBackgroundBrush;
+        Width = 1400;
+        Height = 1000;
+        ResizeMode = ResizeMode.CanResizeWithGrip;
+        WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
-        public MainWindowViewModel ViewModel { 
-            get => (MainWindowViewModel) DataContext;
-            set => DataContext = value;
-        }
+        Build();
+    }
+
+    public MainWindowViewModel ViewModel
+    {
+        get => (MainWindowViewModel) DataContext;
+        set => DataContext = value;
     }
 }

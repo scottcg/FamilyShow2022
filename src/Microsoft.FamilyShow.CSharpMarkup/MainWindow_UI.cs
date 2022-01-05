@@ -24,7 +24,6 @@ namespace Microsoft.FamilyShow
                 .VerticalAlignment(VerticalAlignment.Bottom)
                 .Style(skin.MenuStyle);
 
-            ViewModel.StatusMessage = "hello";
             Content =
                 DockPanel(
                     TextBlock(ViewModel.StatusMessage)

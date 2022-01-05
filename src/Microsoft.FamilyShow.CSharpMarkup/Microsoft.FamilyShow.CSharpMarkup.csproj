@@ -54,6 +54,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\Microsoft.FamilyShow\Views\WelcomeViewModel.cs" Link="Views\WelcomeViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="FamilyShow.ico" />
     <Content Include="Skins\Black\BlackResources.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
