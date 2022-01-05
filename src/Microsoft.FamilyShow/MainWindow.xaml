@@ -7,11 +7,11 @@
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Microsoft.FamilyShow"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:Microsoft.FamilyShow.Views"
+    xmlns:vm="clr-namespace:Microsoft.FamilyShow"
     Title="Family.Show.2022"
     Width="1400"
     Height="1000"
-    xmlns:vm="clr-namespace:Microsoft.FamilyShow"
-    xmlns:views="clr-namespace:Microsoft.FamilyShow.Views"
     d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel,
                                      IsDesignTimeCreatable=False}"
     Background="{DynamicResource MainBackgroundBrush}"
@@ -95,9 +95,13 @@
 
     </Window.Resources>
 
-    <DockPanel >
+    <DockPanel>
 
-        <TextBlock Text="{Binding StatusMessage}" Style="{DynamicResource StatusMessageTextStyle}"  DockPanel.Dock="Bottom" Margin="10,0,20,10" />
+        <TextBlock
+            Margin="10,0,20,10"
+            DockPanel.Dock="Bottom"
+            Style="{DynamicResource StatusMessageTextStyle}"
+            Text="{Binding StatusMessage}" />
 
         <Border
             x:Name="HeaderBorder"
