@@ -12,9 +12,8 @@ namespace Microsoft.FamilyShow.Views
     {
         public void Build()
         {
-            var welcomeButtonStyle = Style(typeof(System.Windows.Controls.Button)).UI;
-
-            var recentFileButtonStyle = Style(typeof(System.Windows.Controls.Button)).UI;
+            var welcomeButtonStyle = App.Current.Resources["WelcomeButtonStyle"];
+            var recentFileButtonStyle = App.Current.Resources["RecentFileButtonStyle"];
 
             Content = HStack(
                 Border()
