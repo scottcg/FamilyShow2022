@@ -33,22 +33,4 @@ namespace Microsoft.FamilyShow
             set => DataContext = value;
         }
     }
-
-    public interface ISkin {}
-
-    public class BlackSkin : ISkin
-    {
-        public SolidColorBrush MainBackgroundBrush => (SolidColorBrush)FindResource(nameof(MainBackgroundBrush));
-        public SolidColorBrush BorderBrush => (SolidColorBrush)FindResource(nameof(BorderBrush));
-        public SolidColorBrush HeaderFontColor => (SolidColorBrush)FindResource(nameof(HeaderFontColor));
-        public Style StatusMessageTextStyle => (Style)FindResource(nameof(StatusMessageTextStyle));
-        public Style MenuStyle => (Style) FindResource(nameof(MenuStyle));
-        public Style MenuItemStyle => (Style) FindResource(nameof(MenuItemStyle));
-
-        internal static object FindResource(string name)
-        {
-            var v = App.Current.FindResource(name)!;
-            return v;
-        }
-    }
 }

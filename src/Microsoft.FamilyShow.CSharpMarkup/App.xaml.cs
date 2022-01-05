@@ -24,13 +24,13 @@ public partial class App : Application
 
     public App()
     {
-        Skin = new BlackSkin();
+        Skin = new Skin();
         Services = ConfigureServices();
     }
 
     public new static App Current => (App) Application.Current;
 
-    public BlackSkin Skin { get; set; }
+    public Skin Skin { get; }
 
     public IServiceProvider Services { get; }
 
