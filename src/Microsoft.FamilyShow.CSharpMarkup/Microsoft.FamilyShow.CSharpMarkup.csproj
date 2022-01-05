@@ -1,0 +1,202 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Microsoft.FamilyShow</AssemblyName>
+    <RootNamespace>Microsoft.FamilyShow</RootNamespace>
+    <ApplicationIcon>FamilyShow.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="FamilyShow.ico" />
+    <None Remove="Images\CharacterGrowFont.png" />
+    <None Remove="Images\CharacterShrinkFont.png" />
+    <None Remove="Images\EditCopy.png" />
+    <None Remove="Images\EditCut.png" />
+    <None Remove="Images\EditPaste.png" />
+    <None Remove="Images\EditRedo.png" />
+    <None Remove="Images\EditUndo.png" />
+    <None Remove="Images\ListBullets.png" />
+    <None Remove="Images\ListNumbering.png" />
+    <None Remove="Images\ParagraphCenterJustify.png" />
+    <None Remove="Images\ParagraphDecreaseIndentation.png" />
+    <None Remove="Images\ParagraphFullJustify.png" />
+    <None Remove="Images\ParagraphIncreaseIndentation.png" />
+    <None Remove="Images\ParagraphLeftJustify.png" />
+    <None Remove="Images\ParagraphRightJustify.png" />
+    <None Remove="Sample Files\Images\Edward VII.jpg" />
+    <None Remove="Sample Files\Images\Edward VIII.jpg" />
+    <None Remove="Sample Files\Images\Elizabeth II.jpg" />
+    <None Remove="Sample Files\Images\George V.jpg" />
+    <None Remove="Sample Files\Images\George VI.jpg" />
+    <None Remove="Sample Files\Images\Margaret Rose.jpg" />
+    <None Remove="Sample Files\Images\Prince Charles.jpg" />
+    <None Remove="Sample Files\Images\Prince Henry.jpg" />
+    <None Remove="Sample Files\Images\Prince William.jpg" />
+    <None Remove="Sample Files\Images\Princess Diana.jpg" />
+    <None Remove="Sample Files\Stories\Camilla Shand {cb2c1f69-5311-403a-948f-eaf74dd8e72d}.rtf" />
+    <None Remove="Sample Files\Stories\Charles Philip Arthur Windsor {I11}.rtf" />
+    <None Remove="Sample Files\Stories\Diana Frances Spencer {I12}.rtf" />
+    <None Remove="Sample Files\Stories\Edward VII Wettin {I1}.rtf" />
+    <None Remove="Sample Files\Stories\Edward VIII Windsor {I5}.rtf" />
+    <None Remove="Sample Files\Stories\Elizabeth II Alexandra Mary Windsor {I9}.rtf" />
+    <None Remove="Sample Files\Stories\George V Windsor {I3}.rtf" />
+    <None Remove="Sample Files\Stories\George VI Windsor {I7}.rtf" />
+    <None Remove="Sample Files\Stories\Margaret Rose Windsor {I24}.rtf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Skins\Black\BlackResources.xaml" />
+    <Page Remove="Skins\Silver\SilverResources.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FamilyShow.ico" />
+    <Content Include="Skins\Black\BlackResources.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+    <Content Include="Skins\Silver\SilverResources.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+		<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Microsoft.FamilyShowLib\Microsoft.FamilyShowLib.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Images\CharacterGrowFont.png" />
+	  <Resource Include="Images\CharacterShrinkFont.png" />
+	  <Resource Include="Images\EditCopy.png" />
+	  <Resource Include="Images\EditCut.png" />
+	  <Resource Include="Images\EditPaste.png" />
+	  <Resource Include="Images\EditRedo.png" />
+	  <Resource Include="Images\EditUndo.png" />
+	  <Resource Include="Images\ListBullets.png" />
+	  <Resource Include="Images\ListNumbering.png" />
+	  <Resource Include="Images\ParagraphCenterJustify.png" />
+	  <Resource Include="Images\ParagraphDecreaseIndentation.png" />
+	  <Resource Include="Images\ParagraphFullJustify.png" />
+	  <Resource Include="Images\ParagraphIncreaseIndentation.png" />
+	  <Resource Include="Images\ParagraphLeftJustify.png" />
+	  <Resource Include="Images\ParagraphRightJustify.png" />
+	  <Resource Include="Sample Files\Images\Edward VII.jpg" />
+	  <Resource Include="Sample Files\Images\Edward VIII.jpg" />
+	  <Resource Include="Sample Files\Images\Elizabeth II.jpg" />
+	  <Resource Include="Sample Files\Images\George V.jpg" />
+	  <Resource Include="Sample Files\Images\George VI.jpg" />
+	  <Resource Include="Sample Files\Images\Margaret Rose.jpg" />
+	  <Resource Include="Sample Files\Images\Prince Charles.jpg" />
+	  <Resource Include="Sample Files\Images\Prince Henry.jpg" />
+	  <Resource Include="Sample Files\Images\Prince William.jpg" />
+	  <Resource Include="Sample Files\Images\Princess Diana.jpg" />
+	  <Resource Include="Sample Files\Stories\Camilla Shand {cb2c1f69-5311-403a-948f-eaf74dd8e72d}.rtf" />
+	  <Resource Include="Sample Files\Stories\Charles Philip Arthur Windsor {I11}.rtf" />
+	  <Resource Include="Sample Files\Stories\Diana Frances Spencer {I12}.rtf" />
+	  <Resource Include="Sample Files\Stories\Edward VII Wettin {I1}.rtf" />
+	  <Resource Include="Sample Files\Stories\Edward VIII Windsor {I5}.rtf" />
+	  <Resource Include="Sample Files\Stories\Elizabeth II Alexandra Mary Windsor {I9}.rtf" />
+	  <Resource Include="Sample Files\Stories\George V Windsor {I3}.rtf" />
+	  <Resource Include="Sample Files\Stories\George VI Windsor {I7}.rtf" />
+	  <Resource Include="Sample Files\Stories\Margaret Rose Windsor {I24}.rtf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<Compile Update="Controls\Diagram\Diagram.cs">
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Controls\Diagram\DiagramViewer.xaml.cs">
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Controls\FamilyData\FamilyData.xaml.cs">
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Controls\FamilyData\FilterText.xaml.cs">
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Controls\FamilyData\Histogram.xaml.cs">
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Controls\FamilyData\SharedBirthdays.xaml.cs">
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Controls\FamilyData\TagCloud.xaml.cs">
+		  <SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Assemblies\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="CSharpMarkup.Wpf.dll">
+			<HintPath>Assemblies\CSharpMarkup.Wpf.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Update="Controls\Diagram\DiagramViewer.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="Controls\FamilyData\FamilyData.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="Controls\FamilyData\FilterText.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="Controls\FamilyData\Histogram.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="Controls\FamilyData\SharedBirthdays.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="Controls\FamilyData\TagCloud.xaml">
+	    <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+	    <SubType>Designer</SubType>
+	  </Page>
+	</ItemGroup>
+
+</Project>

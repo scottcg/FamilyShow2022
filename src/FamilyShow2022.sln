@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.FamilyShow", "Mic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.FamilyShowLib", "Microsoft.FamilyShowLib\Microsoft.FamilyShowLib.csproj", "{368F329D-7F70-4FE8-AACC-1D4F7A08AEE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.FamilyShow.CSharpMarkup", "Microsoft.FamilyShow.CSharpMarkup\Microsoft.FamilyShow.CSharpMarkup.csproj", "{BF55A911-B83F-4204-8629-66DF4CAB331F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{368F329D-7F70-4FE8-AACC-1D4F7A08AEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{368F329D-7F70-4FE8-AACC-1D4F7A08AEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{368F329D-7F70-4FE8-AACC-1D4F7A08AEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF55A911-B83F-4204-8629-66DF4CAB331F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF55A911-B83F-4204-8629-66DF4CAB331F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF55A911-B83F-4204-8629-66DF4CAB331F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF55A911-B83F-4204-8629-66DF4CAB331F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
