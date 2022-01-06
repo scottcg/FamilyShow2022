@@ -85,6 +85,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\CSharpForMarkup\src\CSharpMarkup.Wpf\CSharpMarkup.Wpf.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Resource Include="Images\CharacterGrowFont.png" />
 	  <Resource Include="Images\CharacterShrinkFont.png" />
 	  <Resource Include="Images\EditCopy.png" />
@@ -164,10 +168,6 @@
 			<DependentUpon>Resources.resx</DependentUpon>
 			<DesignTime>True</DesignTime>
 		</Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Assemblies\" />
 	</ItemGroup>
 
 	<ItemGroup>
