@@ -57,7 +57,7 @@ public partial class MainWindow
                 Grid(
                         Grid(
                                 // <ColumnDefinition x:Name="column1CloneForLayer0" SharedSizeGroup="column1" />
-                                Border( /* <local:DiagramViewer x:Name="DiagramControl" Zoom="1.1" /> */)
+                                Border(new DiagramViewer {Zoom = 1.1})
                                     .Name("DiagramBorder")
                                     .Background(skin.DiagramGradientBrush)
                                     .Style(skin.BorderStyle))
