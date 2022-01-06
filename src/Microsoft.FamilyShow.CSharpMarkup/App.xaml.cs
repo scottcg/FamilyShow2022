@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.FamilyShow.Framework;
 using Microsoft.FamilyShow.Properties;
 using Microsoft.FamilyShow.Services;
+using Microsoft.FamilyShow.Views;
 using Microsoft.FamilyShowLib;
 
 namespace Microsoft.FamilyShow;
@@ -87,6 +88,7 @@ public partial class App : Application
         //services.AddSingleton<IUserInterfaceConnector, UserInterfaceConnector>();
 
         services.AddTransient<MainWindowViewModel>();
+        services.AddTransient<WelcomeViewModel>();
 
         return services.BuildServiceProvider();
     }

@@ -5,8 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2006"
     xmlns:local="clr-namespace:Microsoft.FamilyShow"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:Microsoft.FamilyShow"
     xmlns:views="clr-namespace:Microsoft.FamilyShow.Views"
+    xmlns:vm="clr-namespace:Microsoft.FamilyShow"
     d:DataContext="{d:DesignInstance Type=vm:WelcomeViewModel,
                                      IsDesignTimeCreatable=False}"
     mc:Ignorable="d">

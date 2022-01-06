@@ -20,7 +20,18 @@ public class Skin
     public DrawingBrush OGITREV => (DrawingBrush) FindResource(nameof(OGITREV));
 
     public LinearGradientBrush DiagramGradientBrush => (LinearGradientBrush) FindResource(nameof(DiagramGradientBrush));
+
     public Style BorderStyle => (Style) FindResource(nameof(BorderStyle));
+
+    public SolidColorBrush WelcomeBackgroundBrush => (SolidColorBrush) FindResource(nameof(WelcomeBackgroundBrush));
+
+    public SolidColorBrush WelcomeHeaderFontColor => (SolidColorBrush) FindResource(nameof(WelcomeHeaderFontColor));
+
+    public DrawingBrush WelcomeHeaderBg => (DrawingBrush) FindResource(nameof(WelcomeHeaderBg));
+
+    public SolidColorBrush BackgroundBrush => (SolidColorBrush) FindResource(nameof(BackgroundBrush));
+
+    public LinearGradientBrush InputBackgroundBrush => (LinearGradientBrush)FindResource(nameof(InputBackgroundBrush));
 
     internal static object FindResource(string name)
     {
