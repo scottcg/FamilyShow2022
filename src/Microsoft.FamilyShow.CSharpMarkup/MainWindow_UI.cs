@@ -66,13 +66,10 @@ public partial class MainWindow
                         Grid(
                                 // <ColumnDefinition Width="300" SharedSizeGroup="column1" />
                                 Columns(new GridLength(300)),
-                                /*
-                                 <views:DetailsView
-                                    x:Name="DetailsControl"
-                                    Grid.Column="1"
-                                    Margin="5,0,0,0"
-                                    DataContext="{x:Null}" />
-                                 */
+                                Border(
+                                        new DetailsView {Margin = new Thickness(5, 0, 0, 0), DataContext = null}
+                                    ).Name("DetailsControl")
+                                    .Grid_Column(1),
                                 GridSplitter()
                                     .Width(5)
                                     .HorizontalAlignment(HorizontalAlignment.Left)

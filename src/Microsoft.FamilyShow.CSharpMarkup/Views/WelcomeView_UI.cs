@@ -9,8 +9,10 @@ public partial class WelcomeView : UserControl
 {
     public void Build()
     {
-        var welcomeButtonStyle = App.Current.Resources["WelcomeButtonStyle"];
-        var recentFileButtonStyle = App.Current.Resources["RecentFileButtonStyle"];
+        var welcomeButtonStyle = (System.Windows.Style)FindResource("WelcomeButtonStyle");
+        var recentFileButtonStyle = (System.Windows.Style)FindResource("RecentFileButtonStyle");
+
+        var defaultStyle = App.Current.TryFindResource(typeof(System.Windows.Controls.Label)) as System.Windows.Style;
 
         var skin = App.Current.Skin;
 
@@ -43,11 +45,52 @@ public partial class WelcomeView : UserControl
                 .Opacity(0.8),
             Border(
                     Grid(
-                            HStack()
+                        Rows(Star, Auto),
+                            VStack(
+                                    Button("New")
+                                        .Name("NewButton")
+                                        .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                        // .Content("New")
+                                        .Command(ViewModel.Create)
+                                        .IsDefault(true)
+                                        .Style(welcomeButtonStyle),
+                                    Button("Open...")
+                                        .Name("OpenButton")
+                                        .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                        // .Content("Open...")
+                                        .Command(ViewModel.Open)
+                                        .IsDefault(true)
+                                        .Style(welcomeButtonStyle),
+                                    Button("Import...")
+                                        .Name("ImportButton")
+                                        .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                        // .Content("Import...")
+                                        .Command(ViewModel.Import)
+                                        .IsDefault(true)
+                                        .Style(welcomeButtonStyle)
+                                    )
                                 .Margin(5, 20, 5, 10)
                                 .HorizontalAlignment(HorizontalAlignment.Stretch),
-                            GridSplitter(),
-                            Label())
+                            GridSplitter()
+                                .Height(1)
+                                .Margin(2,0,2,0)
+                                .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                .VerticalAlignment(VerticalAlignment.Bottom)
+                                .Background("#FF3D4976")
+                                .IsEnabled(false),
+                            Label("Open Recent")
+                                .Margin(10,0,0,0)
+                                .HorizontalAlignment(HorizontalAlignment.Left)
+                                .VerticalAlignment(VerticalAlignment.Top)
+                                .Style(defaultStyle) // there's a problem here someplace
+                                .Background("#FFB5C8D8")
+                                .Grid_Row(1),
+                            StackPanel()
+                                .Grid_Row(1)
+                                .Margin(5, 30.87, 5, 10)
+                                .HorizontalAlignment(HorizontalAlignment.Stretch)
+                                .VerticalAlignment(VerticalAlignment.Stretch)
+                        )
                         .Name("ContentGrid")
                         .Margin(0, 0, 0, 0)
                         .Background(skin.InputBackgroundBrush))
