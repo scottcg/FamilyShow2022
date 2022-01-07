@@ -85,7 +85,10 @@ public partial class WelcomeView : UserControl
                                 .Style(defaultStyle) // there's a problem here someplace
                                 .Background("#FFB5C8D8")
                                 .Grid_Row(1),
-                            StackPanel()
+                            StackPanel(
+                                    ListBox()
+                                        .ItemsSource(ViewModel.RecentFiles)
+                                    )
                                 .Grid_Row(1)
                                 .Margin(5, 30.87, 5, 10)
                                 .HorizontalAlignment(HorizontalAlignment.Stretch)
