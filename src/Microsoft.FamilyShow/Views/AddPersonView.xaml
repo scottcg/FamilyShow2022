@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="350"
-    xmlns:vm="clr-namespace:Microsoft.FamilyShow"
+    xmlns:vm="clr-namespace:Microsoft.FamilyShow.Views"
     d:DataContext="{d:DesignInstance Type=vm:AddPersonViewModel,
                                      IsDesignTimeCreatable=False}"
     AllowDrop="True"
