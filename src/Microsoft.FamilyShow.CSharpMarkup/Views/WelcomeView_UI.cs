@@ -2,6 +2,7 @@
 using CSharpMarkup.Wpf;
 using static CSharpMarkup.Wpf.Helpers;
 using UserControl = System.Windows.Controls.UserControl;
+using static System.Windows.Media.Colors;
 
 namespace Microsoft.FamilyShow.Views;
 
@@ -88,6 +89,8 @@ public partial class WelcomeView : UserControl
                             StackPanel(
                                     ListBox()
                                         .ItemsSource(ViewModel.RecentFiles)
+                                        .Background(Transparent)
+                                        .BorderBrush(Transparent)
                                     )
                                 .Grid_Row(1)
                                 .Margin(5, 30.87, 5, 10)
