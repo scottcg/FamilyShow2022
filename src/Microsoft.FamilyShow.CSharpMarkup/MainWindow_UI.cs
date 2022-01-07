@@ -29,10 +29,10 @@ public partial class MainWindow
                     .Margin(10, 0, 20, 10),
                 Border(
                         DockPanel(TextBlock(
-                                    Run("Family")
-                                        .Foreground("#FFCFD3DA")
-                                    // this needs to allow collection of Run()
-                                    //, Run(".Show").FontWeight(FontWeights.Normal)
+                                    Inlines(
+                                        Run("Family").Foreground("#FFCFD3DA"),
+                                        Run(".Show").FontWeight(FontWeights.Normal)
+                                    )
                                 )
                                 .Margin(0, 0, 0, 5)
                                 .VerticalAlignment(VerticalAlignment.Bottom)
