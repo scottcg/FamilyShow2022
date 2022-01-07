@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Microsoft.FamilyShow.Views
 {
-    /// <summary>
-    /// Interaction logic for WelcomeView.xaml
-    /// </summary>
     public partial class WelcomeView : UserControl
     {
         public WelcomeView()

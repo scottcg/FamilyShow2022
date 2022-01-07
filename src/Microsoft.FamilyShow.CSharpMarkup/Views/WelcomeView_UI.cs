@@ -13,8 +13,6 @@ public partial class WelcomeView : UserControl
         var welcomeButtonStyle = (System.Windows.Style)FindResource("WelcomeButtonStyle");
         var recentFileButtonStyle = (System.Windows.Style)FindResource("RecentFileButtonStyle");
 
-        var defaultStyle = App.Current.TryFindResource(typeof(System.Windows.Controls.Label)) as System.Windows.Style;
-
         var skin = App.Current.Skin;
 
         Content = VStack(
@@ -83,8 +81,7 @@ public partial class WelcomeView : UserControl
                                 .Margin(10,0,0,0)
                                 .HorizontalAlignment(HorizontalAlignment.Left)
                                 .VerticalAlignment(VerticalAlignment.Top)
-                                .Style(defaultStyle) // there's a problem here someplace
-                                .Background("#FFB5C8D8")
+                                .Foreground("#FFB5C8D8")
                                 .Grid_Row(1),
                             StackPanel(
                                     ListBox()
