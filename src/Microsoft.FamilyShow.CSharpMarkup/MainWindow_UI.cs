@@ -72,7 +72,7 @@ public partial class MainWindow
                                     .Grid_Column(1),
                                 GridSplitter()
                                     .Width(5)
-                                    .HorizontalAlignment(HorizontalAlignment.Left)
+                                    .HorizontalAlignment_Left()
                                     .Background(skin.MainBackgroundBrush)
                                     .Margin(0, 10, 0, 10))
                             .Name("DetailsPan")
