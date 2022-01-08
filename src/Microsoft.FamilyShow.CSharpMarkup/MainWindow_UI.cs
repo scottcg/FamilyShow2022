@@ -1,16 +1,21 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Animation;
 using CSharpMarkup.Wpf;
+using Microsoft.FamilyShow.Controls.FamilyData;
 using Microsoft.FamilyShow.Views;
 using static CSharpMarkup.Wpf.Helpers;
 using ColumnDefinition = System.Windows.Controls.ColumnDefinition;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Microsoft.FamilyShow;
 
 public partial class MainWindow
 {
+    private DiagramViewer diagramControl;
+    private FamilyData familyDataControl;
+    private UserControl personInfoControl;
+    private DetailsView detailsControl;
+
     public void Build()
     {
         var skin = App.Current.Skin;
@@ -28,6 +33,11 @@ public partial class MainWindow
             Name = "column1CloneForLayer0",
             SharedSizeGroup = "column1"
         };
+
+        Resources.Add("ShowPersonInfo", CreateShowStoryboard("ShowPersonInfo", personInfoControl));
+        Resources.Add("HidePersonInfo", CreateHideStoryboard("HidePersonInfo", personInfoControl));
+        Resources.Add("ShowFamilyData", CreateShowStoryboard("ShowFamilyData", familyDataControl));
+        Resources.Add("HideFamilyData", CreateHideStoryboard("HideFamilyData", personInfoControl));
 
         Content =
             DockPanel(
@@ -66,7 +76,7 @@ public partial class MainWindow
                                     new ColumnDefinition(),
                                     column1CloneForLayer0
                                 },
-                                Border(new DiagramViewer {Zoom = 1.1, Visibility = Visibility.Hidden})
+                                Border(new DiagramViewer { Zoom = 1.1, Visibility = Visibility.Hidden }.Assign(out diagramControl))
                                     .Name("DiagramBorder")
                                     .Background(skin.DiagramGradientBrush)
                                     .Style(skin.BorderStyle))
@@ -82,7 +92,7 @@ public partial class MainWindow
                                     }
                                 },
                                 Border(
-                                        new DetailsView {Margin = new Thickness(5, 0, 0, 0), DataContext = null}
+                                        new DetailsView { Margin = new Thickness(5, 0, 0, 0), DataContext = null }.Assign(out detailsControl)
                                     ).Name("DetailsControl")
                                     .Grid_Column(1),
                                 GridSplitter()
@@ -94,10 +104,35 @@ public partial class MainWindow
                             .Name("DetailsPane")
                             .Margin(10, 0, 10, 10)
                             .Visibility(Visibility.Visible),
+                        new UserControl
+                        {
+                            Name = "AddPersonView",
+                            HorizontalAlignment = HorizontalAlignment.Center,
+                            VerticalAlignment = VerticalAlignment.Center
+                        },
                         new WelcomeView
                         {
                             HorizontalAlignment = HorizontalAlignment.Center,
                             VerticalAlignment = VerticalAlignment.Center
+                        },
+                        new UserControl
+                        {
+                            Name = "PersonInfoView",
+                            Opacity = 0,
+                            Visibility = Visibility.Hidden
+                        }.Assign(out personInfoControl),
+                        new FamilyData
+                        {
+                            Name = "FamilyDataControl",
+                            Opacity = 0,
+                            Visibility = Visibility.Hidden
+                        }.Assign(out familyDataControl),
+                        new UserControl
+                        {
+                            Name = "OldPersonAlertView",
+                            HorizontalAlignment = HorizontalAlignment.Center,
+                            VerticalAlignment = VerticalAlignment.Center,
+                            Visibility = Visibility.Hidden
                         })
                     .Name("MainGrid")
                     .Grid_IsSharedSizeScope(true)

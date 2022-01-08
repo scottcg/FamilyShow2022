@@ -46,4 +46,10 @@ public static class Helpers
         view.UI.FontFamily = new FontFamily(value);
         return view;
     }
+
+    public static TFrom Assign<TFrom>(this TFrom source, out TFrom destination)
+    {
+        destination = source;
+        return destination;
+    }
 }
