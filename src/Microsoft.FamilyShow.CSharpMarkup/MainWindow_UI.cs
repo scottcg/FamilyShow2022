@@ -1,9 +1,11 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
+using System.Windows.Media.Animation;
 using CSharpMarkup.Wpf;
 using Microsoft.FamilyShow.Views;
 using static CSharpMarkup.Wpf.Helpers;
+using ColumnDefinition = System.Windows.Controls.ColumnDefinition;
 
 namespace Microsoft.FamilyShow;
 
@@ -21,6 +23,12 @@ public partial class MainWindow
             .VerticalAlignment(VerticalAlignment.Bottom)
             .Style(skin.MenuStyle);
 
+        var column1CloneForLayer0 = new ColumnDefinition
+        {
+            Name = "column1CloneForLayer0",
+            SharedSizeGroup = "column1"
+        };
+
         Content =
             DockPanel(
                 TextBlock(ViewModel.StatusMessage)
@@ -36,14 +44,13 @@ public partial class MainWindow
                                 )
                                 .Margin(0, 0, 0, 5)
                                 .VerticalAlignment(VerticalAlignment.Bottom)
-                                .FontFamily(new FontFamily("Segoe UI"))
+                                .FontFamily("Segoe UI")
                                 .FontSize(24)
                                 .FontStretch(FontStretches.Normal)
                                 .FontWeight(FontWeights.Light)
                                 .Foreground(skin.HeaderFontColor)
                                 .Opacity(1)
-                                .TextWrapping(TextWrapping.Wrap)
-                            ,
+                                .TextWrapping(TextWrapping.Wrap),
                             Rectangle()))
                     .Name("HeaderBorder")
                     .DockPanel_Dock(Dock.Top)
@@ -54,18 +61,26 @@ public partial class MainWindow
                 Border(menu)
                     .Name("MenuBorder")
                     .DockPanel_Dock(Dock.Top),
-                Grid(
-                        Grid(
-                                // <ColumnDefinition x:Name="column1CloneForLayer0" SharedSizeGroup="column1" />
-                                Border(new DiagramViewer {Zoom = 1.1})
+                Grid(Helpers.Grid(new[]
+                                {
+                                    new ColumnDefinition(),
+                                    column1CloneForLayer0
+                                },
+                                Border(new DiagramViewer {Zoom = 1.1, Visibility = Visibility.Hidden})
                                     .Name("DiagramBorder")
                                     .Background(skin.DiagramGradientBrush)
                                     .Style(skin.BorderStyle))
                             .Name("DiagramPane")
                             .Margin(10, 0, 10, 10),
-                        Grid(
-                                // <ColumnDefinition Width="300" SharedSizeGroup="column1" />
-                                Columns(new GridLength(300)),
+                        Helpers.Grid(new[]
+                                {
+                                    new ColumnDefinition(),
+                                    new ColumnDefinition
+                                    {
+                                        Width = new GridLength(300),
+                                        SharedSizeGroup = "column1"
+                                    }
+                                },
                                 Border(
                                         new DetailsView {Margin = new Thickness(5, 0, 0, 0), DataContext = null}
                                     ).Name("DetailsControl")
@@ -74,8 +89,9 @@ public partial class MainWindow
                                     .Width(5)
                                     .HorizontalAlignment_Left()
                                     .Background(skin.MainBackgroundBrush)
-                                    .Margin(0, 10, 0, 10))
-                            .Name("DetailsPan")
+                                    .Margin(0, 10, 0, 10)
+                                    .Grid_Column(1))
+                            .Name("DetailsPane")
                             .Margin(10, 0, 10, 10)
                             .Visibility(Visibility.Visible),
                         new WelcomeView
