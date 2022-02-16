@@ -73,6 +73,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
+		<PackageReference Include="CSharpMarkup.WPF" Version="0.6.1-dev.14" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
@@ -82,10 +83,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Microsoft.FamilyShowLib\Microsoft.FamilyShowLib.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\..\..\CSharpForMarkup\src\CSharpMarkup.Wpf\CSharpMarkup.Wpf.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -168,12 +165,6 @@
 			<DependentUpon>Resources.resx</DependentUpon>
 			<DesignTime>True</DesignTime>
 		</Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Reference Include="CSharpMarkup.Wpf.dll">
-			<HintPath>Assemblies\CSharpMarkup.Wpf.dll</HintPath>
-		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>

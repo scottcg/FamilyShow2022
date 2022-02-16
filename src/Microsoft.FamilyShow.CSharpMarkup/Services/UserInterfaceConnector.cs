@@ -3,12 +3,12 @@
 #if false
 public class UserInterfaceConnector : IUserInterfaceConnector
 {
-    public void RegisterMainWindow(MainWindow mainWindow)
+    public void RegisterMainWindow(IUserInterfaceConnector mainWindow)
     {
         owner = mainWindow;
     }
 
-    private MainWindow owner = null!;
+    private IUserInterfaceConnector owner = null!;
 
     public void BuildOpenMenu()
     {

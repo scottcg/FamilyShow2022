@@ -37,7 +37,7 @@ public partial class MainWindow
         Resources.Add("ShowPersonInfo", CreateShowStoryboard("ShowPersonInfo", personInfoControl));
         Resources.Add("HidePersonInfo", CreateHideStoryboard("HidePersonInfo", personInfoControl));
         Resources.Add("ShowFamilyData", CreateShowStoryboard("ShowFamilyData", familyDataControl));
-        Resources.Add("HideFamilyData", CreateHideStoryboard("HideFamilyData", personInfoControl));
+        Resources.Add("HideFamilyData", CreateHideStoryboard("HideFamilyData", familyDataControl));
 
         Content =
             DockPanel(
@@ -47,10 +47,8 @@ public partial class MainWindow
                     .Margin(10, 0, 20, 10),
                 Border(
                         DockPanel(TextBlock(
-                                    Inlines(
                                         Run("Family").Foreground("#FFCFD3DA"),
                                         Run(".Show").FontWeight(FontWeights.Normal)
-                                    )
                                 )
                                 .Margin(0, 0, 0, 5)
                                 .VerticalAlignment(VerticalAlignment.Bottom)

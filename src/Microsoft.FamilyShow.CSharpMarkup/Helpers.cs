@@ -35,7 +35,7 @@ public static class Helpers
 
         foreach (var definition in definitions) grid.UI.ColumnDefinitions.Add(definition);
 
-        CSharpMarkup.Wpf.Helpers.SpreadChildren(grid.UI.Children);
+        // CSharpMarkup.Wpf.Helpers.Spread(grid.UI.Children);
 
         return grid;
     }
